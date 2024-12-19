@@ -1,11 +1,13 @@
-import { MotionCanvas, LayoutCamera } from "framer-motion-3d";
+import { Canvas } from '@react-three/fiber';
 import Model from './Model'; 
 import Lights from "./Lights";
 
 export default function Scene({isFullscreen}) {
+    // useMemo(() => extend({THREE}), []);
     return (
-        <MotionCanvas>
-            <LayoutCamera
+        <Canvas>
+            {/* <AmbientLight intensity={0.5} /> */}
+            {/* <LayoutCamera
                 initial={false}
                 animate = {
                     isFullscreen ? {
@@ -16,9 +18,9 @@ export default function Scene({isFullscreen}) {
                     } : {
                         x:15, y:0.25, z:0, fov:10
                     }
-                } />
-            <Lights isFullscreen={isFullscreen} />
-            <Model />
-        </MotionCanvas>
+                } /> */}
+            {/* <Lights isFullscreen={isFullscreen} /> */}
+            <Model />   
+        </Canvas>
     )
 }
