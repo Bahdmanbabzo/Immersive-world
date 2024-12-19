@@ -6,10 +6,11 @@ export default function App() {
   return (
     <MotionConfig>
       <div 
+      className='relative'
       data-is-fullscreen={isFullscreen} 
       onClick={() => setFullscreen(!isFullscreen)}>
-        <motion.h1 layout> this is somomething</motion.h1>
-        <motion.div layout> 
+        <motion.h1 layout className='absolute top-0 text-white font-semibold'> this is somomething</motion.h1>
+        <motion.div className='h-screen w-screen fixed' layout> 
           <Suspense>
             <Scene isFullscreen={isFullscreen} />
           </Suspense>
