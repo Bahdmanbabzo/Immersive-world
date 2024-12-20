@@ -7,12 +7,20 @@ import Lights from "./Lights";
 export default function Scene({isFullscreen}) {
     // useMemo(() => extend({THREE}), []);
     return (
-        <Canvas className='border-green-500 border-4'><OrbitControls />
-            <color attach={"background"} args={['#000000']}/>
+        <Canvas 
+        className='border-green-500 border-4 h-full w-full' 
+        camera={{position: [0, 0, 5]}}
+        >
+            <OrbitControls />
             <mesh>
-                <planeGeometry />
-                <MeshPortalMaterial side={THREE.DoubleSide} >
+                
+                <planeGeometry args={[4,5]} />
+                <MeshPortalMaterial 
+                    side={THREE.DoubleSide} 
+                    blend={ isFullscreen ? 1: 0}
+                >
                     <Model />
+                    <color attach={"background"} args={['#000000']}/>
                 </MeshPortalMaterial>
             </mesh>
         </Canvas>
