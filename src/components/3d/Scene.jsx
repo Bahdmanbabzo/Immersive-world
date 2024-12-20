@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import Model from './Model'; 
 import Lights from "./Lights";
 
@@ -7,6 +8,7 @@ export default function Scene({isFullscreen}) {
     return (
         <Canvas>
             {/* <AmbientLight intensity={0.5} /> */}
+            <ambientLight intensity={0.2} />
             {/* <LayoutCamera
                 initial={false}
                 animate = {
@@ -21,6 +23,8 @@ export default function Scene({isFullscreen}) {
                 } /> */}
             {/* <Lights isFullscreen={isFullscreen} /> */}
             <Model />   
+            <color attach="background" args={['#000000']} />
+            <OrbitControls />
         </Canvas>
     )
 }

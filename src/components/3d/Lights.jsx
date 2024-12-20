@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { motion } from "framer-motion-3d";
+import { motion } from "motion/react";
 
 export default function Lights({ isFullscreen }) {
     const three = useThree();
