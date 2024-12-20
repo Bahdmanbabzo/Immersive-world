@@ -1,15 +1,17 @@
 import {CameraControls } from '@react-three/drei';
 import { useEffect, useRef } from 'react';
 import { useThree } from '@react-three/fiber';
+import * as THREE from 'three';
 
 
-export default function Camera({isFullscreen, model}) {
-    const { scene } = useThree();
+export default function Camera({isFullscreen,model}) {
+    // const { scene } = useThree();
+    // console.log(scene.getObjectByName('model'));
     const cameraRef = useRef(); 
     useEffect(() => {
         if(isFullscreen){
-            const targetPosition = THREE.vector3(); 
-            model.getWorldPosition(targetPosition);
+            const targetPosition = new THREE.Vector3(0,0,0); 
+            // model.getWorldPosition(targetPosition); 
             cameraRef.current.setLookAt(
                 0,
                 0,
@@ -23,14 +25,14 @@ export default function Camera({isFullscreen, model}) {
             cameraRef.current.setLookAt(
                 0,
                 0,
-                5,
+                10,
                 0,
                 0,
                 0,
                 true
             )
         }
-    })
+    }, [isFullscreen])
     return (
         <CameraControls ref={cameraRef} />
     );
