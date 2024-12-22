@@ -14,14 +14,14 @@ export default function Scene({isFullscreen}) {
         console.log("the scene effect");
         console.log("this is the portal", portalRef.current); 
         console.log("this is the camera", cameraRef.current);
-    }, []);
+    }, [isFullscreen]);
     // useMemo(() => extend({THREE}), []);
     return (
         <Canvas 
         className='border-green-500 border-4 h-full w-full' 
         // camera={{position: [0, -2, 10]}}
         >
-            <Portal isFullscreen={isFullscreen}>
+            <Portal ref={portalRef} isFullscreen={isFullscreen}>
                 <Model />
              </Portal>
             <Camera isFullscreen={isFullscreen} model={<Model />} />
