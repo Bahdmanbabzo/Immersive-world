@@ -14,5 +14,5 @@ export default function Camera({isFullscreen}) {
         animate(cameraPosition, {z: isFullscreen ? 5: 10}, {duration: 5, ease: 'easeInOut'});
     },[isFullscreen])
 
-    return(null)
+    return(cameraPosition)
 }
