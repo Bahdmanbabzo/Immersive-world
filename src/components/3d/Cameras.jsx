@@ -11,7 +11,7 @@ export default function Camera({isFullscreen}) {
     console.log(cameraPosition); 
     useEffect(() =>{
         console.log("the camera effect"); 
-        animate(cameraPosition, {z: isFullscreen ? 5: 10}, {duration: 5, ease: 'easeInOut'});
+        animate(cameraPosition, {z: isFullscreen ? 5: 10, duration: 5, ease: 'easeInOut'});
     },[isFullscreen])
 
     return(cameraPosition)
