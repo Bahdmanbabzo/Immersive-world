@@ -1,22 +1,21 @@
 import React, { useEffect, useRef, forwardRef } from 'react';
-import { MeshPortalMaterial, Float } from '@react-three/drei';
+import { MeshPortalMaterial, Float, Environment } from '@react-three/drei';
+import { animate } from 'motion';
 import * as THREE from 'three';
 
-const Portal = forwardRef(function Portal({ isFullscreen, children }, ref) {
+export default function Portal({ isFullscreen, children }) {
     return (
         <mesh>
-            <planeGeometry args={[4, 5]} />
+            <planeGeometry args={[10, 10]} />
+            {/* <meshStandardMaterial color="red" /> */}
             <MeshPortalMaterial 
-                ref={ref}
-                side={THREE.DoubleSide} 
+                // side={THREE.DoubleSide} 
                 blend={isFullscreen ? 1 : 0}
-            >
+            >   
+                <Environment preset="night" />
                 <Float>
                     {children}
                 </Float>
             </MeshPortalMaterial>
         </mesh>
-    );
-});
-
-export default Portal;
+    )};
