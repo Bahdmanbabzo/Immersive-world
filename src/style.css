@@ -20,7 +20,8 @@
     z-index: -1;
     padding: 10px; 
     border-radius:10px; 
-    animation: 3s spin linear infinite;
+    animation: 3s spin linear infinite ;
+    /* animation-delay: 2s; */
 }
 
 #card ::before {
