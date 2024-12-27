@@ -13,7 +13,7 @@ export default function App() {
       data-is-fullscreen={isFullscreen} 
       onClick={() => setFullscreen(!isFullscreen)}>
         {/* <motion.h1 layout className='absolute top-0 text-white font-semibold'> this is somomething</motion.h1> */}
-        <div id="card" className='h-full w-full'> 
+        <div id={`${isFullscreen ? 'card': ''}`} className='h-full w-full'> 
           <Suspense className="h-full w-full" fallback="loading...">
             <Scene isFullscreen={isFullscreen} />
           </Suspense>
