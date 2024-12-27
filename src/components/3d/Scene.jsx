@@ -8,16 +8,11 @@ import Lights from "./Lights";
 import Camera from './Cameras';
 import Portal from './Portal';
 export default function Scene({isFullscreen}) {
-    // const portalRef = useRef();
-    useEffect(() => {
-        console.log("the scene effect");
-        // console.log("this is the portal", portalRef.current); 
-    }, [isFullscreen]);
     // useMemo(() => extend({THREE}), []);
     return (
         <Canvas 
-            className='border-green-500 border-4 h-full w-full' 
-            camera={{position: [0, -2, 10]}}
+            className='h-full w-full' 
+            camera={{position: [0,0,3]}}
         >   
             <ambientLight intensity={0.5} />
             <Portal isFullscreen={isFullscreen}>
