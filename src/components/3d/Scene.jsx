@@ -5,7 +5,7 @@ import { animate } from 'motion';
 import * as THREE from 'three';
 import Model from './Model'; 
 import Lights from "./Lights";
-import Camera from './Cameras';
+import AnimateCamera from '../AnimateCamera';
 import Portal from './Portal';
 export default function Scene({isFullscreen}) {
     // useMemo(() => extend({THREE}), []);
@@ -21,6 +21,7 @@ export default function Scene({isFullscreen}) {
           
             {/* <Camera isFullscreen={isFullscreen} model={<Model />} /> */}
             <OrbitControls />
+            <AnimateCamera isFullscreen={isFullscreen} />
         </Canvas>
     )
 }
