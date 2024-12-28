@@ -1,5 +1,5 @@
 
-import { MeshPortalMaterial, Float } from '@react-three/drei';
+import { MeshPortalMaterial, Float, Stars, RandomizedLight } from '@react-three/drei';
 import { damp } from 'maath/easing'
 import { useRef } from 'react';
 import * as THREE from 'three';
@@ -30,6 +30,9 @@ export default function Portal({isFullscreen, children}) {
             >
                {children}
             </Float>
+            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+            <RandomizedLight castShadow amount={2} frames={100} position={[5, 5, -10]} />
+
             <color attach={"background"} args={['#000000']}/>
         </MeshPortalMaterial>
     </mesh>
